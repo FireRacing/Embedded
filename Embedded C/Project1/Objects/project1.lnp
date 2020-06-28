@@ -1,0 +1,7 @@
+--cpu Cortex-M3
+".\objects\program2.o"
+E:\Keil\ARM\RV31\LIB\RTX_CM3.LIB
+--strict --scatter ".\Objects\project1.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\project1.map" -o .\Objects\project1.axf

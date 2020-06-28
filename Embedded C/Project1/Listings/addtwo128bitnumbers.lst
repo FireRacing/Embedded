@@ -1,0 +1,132 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET ,DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10000000        DCD              0x10000000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE ,READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 4805            LDR              R0,=num1
+   12 00000002 4906            LDR              R1,=num2
+   13 00000004 EB00 0301       ADD              R3,R0,R1
+   14 00000008 4A05            LDR              R2,=result
+   15 0000000A 6013            STR              R3,[R2]
+   16 0000000C E7FE    STOP    B                STOP
+   17 0000000E 00 00 00000001 
+                       num1    DCD              0x00000001
+   18 00000014 00000002 
+                       num2    DCD              0x00000002
+   19 00000018 00000000 
+              00000000 
+              00000000         AREA             data, DATA ,READWRITE
+   20 00000000 00000000 
+                       result  DCD              0
+                       
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\object
+s\addtwo128bitnumbers.d -o.\objects\addtwo128bitnumbers.o -IE:\Keil\ARM\RV31\IN
+C -IE:\Keil\ARM\CMSIS\Include -IE:\Keil\ARM\Inc\NXP\LPC17xx --predefine="__RTX 
+SETA 1" --predefine="__EVAL SETA 1" --list=.\listings\addtwo128bitnumbers.lst .
+.\..\Assembly\Addtwo128bitnumbers.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file ..\..\Assembly\Addtwo128bitnumbers.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file ..\..\Assembly\Addtwo128bitnumbers.s
+   Uses
+      At line 2 in file ..\..\Assembly\Addtwo128bitnumbers.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file ..\..\Assembly\Addtwo128bitnumbers.s
+   Uses
+      At line 5 in file ..\..\Assembly\Addtwo128bitnumbers.s
+      At line 9 in file ..\..\Assembly\Addtwo128bitnumbers.s
+
+STOP 0000000C
+
+Symbol: STOP
+   Definitions
+      At line 16 in file ..\..\Assembly\Addtwo128bitnumbers.s
+   Uses
+      At line 16 in file ..\..\Assembly\Addtwo128bitnumbers.s
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file ..\..\Assembly\Addtwo128bitnumbers.s
+   Uses
+      None
+Comment: mycode unused
+num1 00000010
+
+Symbol: num1
+   Definitions
+      At line 17 in file ..\..\Assembly\Addtwo128bitnumbers.s
+   Uses
+      At line 11 in file ..\..\Assembly\Addtwo128bitnumbers.s
+Comment: num1 used once
+num2 00000014
+
+Symbol: num2
+   Definitions
+      At line 18 in file ..\..\Assembly\Addtwo128bitnumbers.s
+   Uses
+      At line 12 in file ..\..\Assembly\Addtwo128bitnumbers.s
+Comment: num2 used once
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+data 00000000
+
+Symbol: data
+   Definitions
+      At line 19 in file ..\..\Assembly\Addtwo128bitnumbers.s
+   Uses
+      None
+Comment: data unused
+result 00000000
+
+Symbol: result
+   Definitions
+      At line 20 in file ..\..\Assembly\Addtwo128bitnumbers.s
+   Uses
+      At line 14 in file ..\..\Assembly\Addtwo128bitnumbers.s
+Comment: result used once
+2 symbols
+343 symbols in table
